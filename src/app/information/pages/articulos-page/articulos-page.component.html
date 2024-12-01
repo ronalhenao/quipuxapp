@@ -1,0 +1,52 @@
+<section class="row h-100">
+  <div class="col-lg-5 col-md-5 d-flex" *ngFor="let info of information">
+    <div class="card text-center p-4 flex-fill">
+      <h4 class="text-uppercase text-left card-title mb-4">Información del contacto</h4>
+      <div class="card-info">
+        <h3 class="card-title">Dirección:</h3>
+        <p>{{ info.direccion.principal.calle }}</p>
+        <p>{{ info.direccion.principal.ciudad }}</p>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title mb-2">Correo electrónico:</h3>
+        <p>{{ info.contacto.correo }}</p>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title mb-2">Sitio Web:</h3>
+        <p>{{ info.contacto.sitio_web }}</p>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title mb-2">Red social:</h3>
+        <p class="mb-0">{{ info.redes_sociales.instagram }}</p>
+        <p>{{ info.redes_sociales.linkedin }}</p>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title mb-2">Dirección:</h3>
+        <p>{{ info.direccion.correspondencia.calle }}</p>
+        <p>{{ info.direccion.correspondencia.ciudad }}</p>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title mb-2">Número de Teléfonos:</h3>
+        <p>Fijo: {{ info.contacto.telefonos.fijo }}</p>
+        <p>Celular: {{ info.contacto.telefonos.celular }}</p>
+      </div>
+    </div>
+  </div>
+
+  <section *ngIf="articulos.length > 0" class=" col-lg-7 col-md-7 d-flex">
+    <div class="card articles p-4">
+      <div class="row">
+        <div class="col-lg-3 col-md-4" *ngFor="let articulo of articulos">
+          <div class="card card-article">
+            <img [src]="articulo.imagen" class="rounded-circle card-image" alt="Imagen de artículo">
+            <div class="card-body text-center px-0">
+              <h5 class="card-title">{{ articulo.titulo }}</h5>
+              <p class="card-text">{{ articulo.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+

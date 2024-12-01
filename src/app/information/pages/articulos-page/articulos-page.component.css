@@ -1,0 +1,30 @@
+.articles{
+  background:#fff ;
+}
+
+.card-article{
+  background: none;
+  border: 0;
+  align-items: center;
+}
+
+.card-image{
+  width: 80px;
+}
+
+.card-title{
+  font-size: 20px;
+}
+
+.card-info p{
+  font-size: 14px;
+}
+
+.card-title{
+  font-size: 16px;
+}
+
+.card-text{
+  font-size: 14px;
+  line-height: 1.4;
+}

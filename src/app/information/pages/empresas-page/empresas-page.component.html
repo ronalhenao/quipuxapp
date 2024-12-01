@@ -1,0 +1,74 @@
+<section *ngIf="information.length > 0" class="row h-100">
+  <div class="col-lg-5 col-md-5 d-flex" *ngFor="let info of information">
+    <div class="card text-center p-4 flex-fill">
+      <h4 class="text-uppercase text-left card-title mb-4">Información de la empresa</h4>
+      <div class="card-info">
+        <h3 class="card-title mb-0">Nombre</h3>
+        <p>{{ info.nombre }}</p>
+      </div>
+
+      <div class="card-info">
+        <h3 class="card-title mb-0">Fecha de Creación:</h3>
+        <p>{{ info.fecha_creacion }}</p>
+      </div>
+
+      <div class="card-info">
+        <h3 class="card-title mb-0">Dirección:</h3>
+        <p>{{ info.direccion_completa.calle }}</p>
+        <p>{{ info.direccion_completa.ciudad }}</p>
+      </div>
+
+      <div class="card-info">
+        <h3 class="card-title mb-0">Número de Teléfonos:</h3>
+        <p>Fijo: {{ info.telefonos.fijo }}</p>
+        <p>Fax: {{ info.telefonos.fax }}</p>
+      </div>
+
+      <div class="card-info">
+        <h3 class="card-title mb-0">Sitio Web:</h3>
+        <p><a href="{{ info.sitio_web }}" target="_blank">{{ info.sitio_web }}</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-7 col-md-7 d-flex" *ngFor="let info of information">
+    <div class="card text-center p-4 flex-fill">
+      <h4 class="text-uppercase text-left card-title mb-4">Información del contacto</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card-info">
+            <h3 class="card-title">Dirección:</h3>
+            <p>{{ info.direccion.principal.calle }}</p>
+            <p>{{ info.direccion.principal.ciudad }}</p>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">Correo electrónico:</h3>
+            <p>{{ info.contacto.correo }}</p>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">Sitio Web:</h3>
+            <p>{{ info.contacto.sitio_web }}</p>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">Red social:</h3>
+            <p>{{ info.redes_sociales.instagram }}</p>
+            <p>{{ info.redes_sociales.linkedin }}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-info">
+            <h3 class="card-title">Dirección:</h3>
+            <p>{{ info.direccion.principal.calle }}</p>
+            <p>{{ info.direccion.principal.ciudad }}</p>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">Número de Teléfonos:</h3>
+            <p>Fijo: {{ info.contacto.telefonos.fijo }}</p>
+            <p>Celular: {{ info.contacto.telefonos.celular }}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

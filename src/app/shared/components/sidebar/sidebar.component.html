@@ -1,0 +1,43 @@
+<aside [class.sidebar-open]="isSidebarOpen" [class.sidebar-closed]="!isSidebarOpen" class="sidebar d-flex flex-column">
+  <div class="p-3 text-center">
+    <button class="btn btn-sm btn-light d-block mx-auto" (click)="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <ul class="nav flex-column">
+    <!-- Empresas -->
+    <li [class.active]="openSubmenu === 'empresa'" class="nav-item">
+      <p (click)="toggleSubmenu('empresa')" class="nav-link text-uppercase mb-0">
+        <i class="fas fa-building mr-2"></i>
+        <span>Empresas</span>
+        <i [class.fa-chevron-down]="openSubmenu !== 'empresa'" 
+          [class.fa-chevron-up]="openSubmenu === 'empresa'" 
+          class="ml-auto fas icon-arrow">
+        </i>
+      </p>
+      <ul *ngIf="openSubmenu === 'empresa'" class="list-unstyled">
+        <li routerLink="empresas/empresa" routerLinkActive="active">
+          <a class="nav-link">Empresas</a>
+        </li>
+      </ul>
+    </li>
+
+    <!-- Artículos -->
+    <li [class.active]="openSubmenu === 'articulos'" class="nav-item">
+      <p (click)="toggleSubmenu('articulos')" class="nav-link text-uppercase mb-0">
+        <i class="fas fa-box mr-2"></i>
+        <span>Artículos</span>
+        <i [class.fa-chevron-down]="openSubmenu !== 'articulos'" 
+          [class.fa-chevron-up]="openSubmenu === 'articulos'" 
+          class="ml-auto fas icon-arrow">
+        </i>
+      </p>
+      <ul *ngIf="openSubmenu === 'articulos'" class="list-unstyled">
+        <li routerLink="empresas/articulos" routerLinkActive="active">
+          <a class="nav-link">Artículos</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
